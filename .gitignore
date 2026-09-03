@@ -1,0 +1,8 @@
+# Ignore user-specific files
+.vscode/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Add language-specific ignore rules here as needed

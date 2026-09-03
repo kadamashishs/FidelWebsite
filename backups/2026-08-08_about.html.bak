@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fidel Projects — About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="logo" href="index.html#home">
+        <img src="assets/Logo.png" alt="Fidel logo" class="logo-image">
+        <span>Fidel Projects</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html#about">About</a></li>
+        <li><a href="services.html#services">Services</a></li>
+        <li><a href="projects.html#projects">Projects</a></li>
+        <li><a href="contact.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section about">
+      <div class="section-inner">
+        <a id="about" class="scroll-anchor" aria-hidden="true"></a>
+        <h2>About Us</h2>
+        <p>Fidel Project brings together Fidel Engineering Works and Fidel Projects and HR Services LLP to deliver integrated solutions across process industries and beyond.</p>
+        <p>From concept planning and design to on‑site execution, we handle mechanical and fabrication projects for <strong>Dairy</strong>, <strong>Ethanol</strong>, <strong>Beverages</strong>, <strong>Sugar</strong>, <strong>Chemical</strong>, <strong>Oil &amp; Gas</strong> and <strong>Pharma</strong> plants with a sharp focus on safety, quality and timelines.</p>
+        <p>Alongside project delivery, we provide consulting support and a professional workforce — project managers, site engineers, supervisors and safety officers — to ensure every task is executed with discipline and accountability.</p>
+        <p>As a unified partner, Fidel Project helps you plan capacity expansions, optimize layouts and de‑risk greenfield and brownfield investments, so your teams can focus on production while we manage people and projects on the ground.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Fidel Engineering Works. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

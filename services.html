@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fidel Projects — Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Fidel Projects services for engineering, fabrication, turnkey execution and technical consulting.">
+  <link rel="canonical" href="https://fidel-projects.com/services.html">
+  <link rel="icon" type="image/png" href="assets/Logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="logo" href="index.html#home">
+        <img src="assets/Logo.png" alt="Fidel logo" class="logo-image">
+        <span class="logo-name">Fidel Projects</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html#about">About</a></li>
+        <li><a href="services.html#services">Services</a></li>
+        <li><a href="projects.html#projects">Projects</a></li>
+        <li><a href="contact.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section services">
+      <div class="section-inner">
+        <a id="services" class="scroll-anchor" aria-hidden="true"></a>
+        <h2>Our Services</h2>
+        <div class="service-list">
+          <article class="service detail-trigger" role="button" tabindex="0" data-detail-image="assets/industry-3.jpeg">
+            <img class="service-icon" src="assets/icon-fabrication.svg" alt="Fabrication icon">
+            <h3>Fabrication & Installation</h3>
+            <p>Precise fabrication of tanks, piping and process systems with reliable installation support.</p>
+            <template class="detail-template">
+              <h3>Scope of work</h3>
+              <p>Fabrication of tanks, piping and process systems prepared for dependable plant installation.</p>
+              <h3>Delivery focus</h3>
+              <p>Quality-controlled shop fabrication, accurate installation, and coordinated commissioning support.</p>
+            </template>
+          </article>
+          <article class="service detail-trigger" role="button" tabindex="0" data-detail-image="assets/industry-2.jpeg">
+            <img class="service-icon" src="assets/icon-project.svg" alt="Project icon">
+            <h3>Turnkey Projects</h3>
+            <p>End-to-end project execution from engineering to commissioning.</p>
+            <template class="detail-template">
+              <h3>Project scope</h3>
+              <p>Engineering, procurement, installation, testing, and commissioning managed through one delivery team.</p>
+              <h3>Client value</h3>
+              <p>Clear ownership, coordinated site activity, and predictable progress from concept to handover.</p>
+            </template>
+          </article>
+          <article class="service detail-trigger" role="button" tabindex="0" data-detail-image="assets/industry-4.jpeg">
+            <img class="service-icon" src="assets/icon-consulting.svg" alt="Consulting icon">
+            <h3>Technical Consulting</h3>
+            <p>Process consulting, plant layout advice, and operational performance planning.</p>
+            <template class="detail-template">
+              <h3>Advisory scope</h3>
+              <p>Practical process, layout, and operational guidance shaped around the needs of each plant.</p>
+              <h3>Expected outcome</h3>
+              <p>Better decisions, improved operating readiness, and a stronger path from planning to execution.</p>
+            </template>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="detail-modal" id="detailModal" hidden role="dialog" aria-modal="true" aria-labelledby="detailModalTitle">
+    <div class="detail-modal-panel">
+      <button class="detail-modal-close" type="button" aria-label="Close details">&times;</button>
+      <div class="detail-modal-content">
+        <div class="detail-modal-media"><img id="detailModalImage" src="" alt=""></div>
+        <div class="detail-modal-copy">
+          <p class="detail-modal-label">Service overview</p>
+          <h2 id="detailModalTitle"></h2>
+          <div id="detailModalSections" class="detail-modal-sections"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Fidel Engineering Works. All rights reserved.</p>
+    <a class="footer-linkedin" href="https://www.linkedin.com/company/fidel-engineering-works/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

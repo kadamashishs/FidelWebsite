@@ -1,0 +1,51 @@
+/* Dynamic header offset + anchor navigation handling
+   - computes header height on load/resize and sets CSS variable --header-offset
+   - intercepts same-page/hash links and applies an offset scroll so headings are visible
+   - on page load, if there's a location.hash, scrolls to the target with offset
+   - retains simple active nav highlighting for multipage links
+*/
+
+// Enable runtime debug logging by setting `window.DEBUG_SCROLL = true` in devtools.
+window.DEBUG_SCROLL = window.DEBUG_SCROLL || false;
+
+const contactForm = document.getElementById('contactForm');
+const contactMessage = document.getElementById('contactMessage');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (contactMessage) contactMessage.textContent = 'Thank you! Your message is ready to be sent. We will respond soon.';
+    contactForm.reset();
+  });
+}
+
+function updateHeaderOffset() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  // Read layout synchronously (single read)
+  const height = header.offsetHeight || 0;
+
+  // Write styles inside requestAnimationFrame to batch writes and avoid layout thrash
+  if (window._headerOffsetRaf) cancelAnimationFrame(window._headerOffsetRaf);
+  window._headerOffsetRaf = requestAnimationFrame(() => {
+    const prev = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-offset')) || 0;
+    if (prev !== height) {
+      document.documentElement.style.setProperty('--header-offset', `${height}px`);
+      // Keep body padding in sync for fixed header (only write if changed)
+      document.body.style.paddingTop = `${height}px`;
+      if (window.DEBUG_SCROLL) console.log('[scroll-debug] updateHeaderOffset applied:', height);
+    }
+    window._headerOffsetRaf = null;
+  });
+}
+
+function scrollToElementWithOffset(el, behavior = 'smooth') {
+  if (!el) return;
+  const headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-offset')) || 0;
+  const rect = el.getBoundingClientRect();
+  const targetY = window.pageYOffset + rect.top - headerOffset - 8; // small gap
+  if (window.DEBUG_SCROLL) {
+    console.log('[scroll-debug] headerOffset:', headerOffset, 'el id:', el.id, 'rect.top:', rect.top, 'pageYOffset:', window.pageYOffset, 'targetY:', targetY);
+  }
+  window.scrollTo({ top: targetY, behavior });
+}

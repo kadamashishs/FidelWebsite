@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fidel Projects — Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View selected Fidel Projects work across dairy, ethanol and pharmaceutical process facilities.">
+  <link rel="canonical" href="https://fidel-projects.com/projects.html">
+  <link rel="icon" type="image/png" href="assets/Logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="logo" href="index.html#home">
+        <img src="assets/Logo.png" alt="Fidel logo" class="logo-image">
+        <span class="logo-name">Fidel Projects</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html#about">About</a></li>
+        <li><a href="services.html#services">Services</a></li>
+        <li><a href="projects.html#projects">Projects</a></li>
+        <li><a href="contact.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section projects">
+      <div class="section-inner">
+        <a id="projects" class="scroll-anchor" aria-hidden="true"></a>
+        <h2>Featured Projects</h2>
+        <div class="project-cards">
+          <article class="project-card detail-trigger" role="button" tabindex="0" data-detail-image="assets/industry-1.jpeg">
+            <h3>Dairy Plant Upgrade</h3>
+            <p>Upgraded processing systems for improved capacity and hygiene control.</p>
+            <template class="detail-template">
+              <h3>Challenge</h3>
+              <p>Improve plant capacity while maintaining hygiene, reliability, and production continuity.</p>
+              <h3>Delivery</h3>
+              <p>Process upgrades and coordinated installation planned around the operating plant environment.</p>
+            </template>
+          </article>
+          <article class="project-card detail-trigger" role="button" tabindex="0" data-detail-image="assets/industry-2.jpeg">
+            <h3>Ethanol Distillation Line</h3>
+            <p>Delivered a complete distillation package with automated controls and robust safety systems.</p>
+            <template class="detail-template">
+              <h3>Scope</h3>
+              <p>Complete distillation package integration with automation, controls, and safety-led execution.</p>
+              <h3>Result</h3>
+              <p>A coordinated process line designed for stable operation and disciplined commissioning.</p>
+            </template>
+          </article>
+          <article class="project-card detail-trigger" role="button" tabindex="0" data-detail-image="assets/industry-4.jpeg">
+            <h3>Pharma Process Facility</h3>
+            <p>Designed and installed clean process piping for a pharmaceutical production line.</p>
+            <template class="detail-template">
+              <h3>Requirement</h3>
+              <p>Deliver clean process piping suitable for a controlled pharmaceutical production environment.</p>
+              <h3>Execution</h3>
+              <p>Detailed installation and quality-focused coordination across the process facility.</p>
+            </template>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="detail-modal" id="detailModal" hidden role="dialog" aria-modal="true" aria-labelledby="detailModalTitle">
+    <div class="detail-modal-panel">
+      <button class="detail-modal-close" type="button" aria-label="Close details">&times;</button>
+      <div class="detail-modal-content">
+        <div class="detail-modal-media"><img id="detailModalImage" src="" alt=""></div>
+        <div class="detail-modal-copy">
+          <p class="detail-modal-label">Project overview</p>
+          <h2 id="detailModalTitle"></h2>
+          <div id="detailModalSections" class="detail-modal-sections"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Fidel Engineering Works. All rights reserved.</p>
+    <a class="footer-linkedin" href="https://www.linkedin.com/company/fidel-engineering-works/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

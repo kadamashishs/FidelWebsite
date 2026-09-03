@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fidel Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="logo" href="index.html#home">
+        <img src="assets/Logo.png" alt="Fidel logo" class="logo-image">
+        <span>Fidel Projects</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html#about">About</a></li>
+        <li><a href="services.html#services">Services</a></li>
+        <li><a href="projects.html#projects">Projects</a></li>
+        <li><a href="contact.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <a id="home" class="scroll-anchor" aria-hidden="true"></a>
+        <p class="eyebrow">Trusted engineering partner</p>
+        <h1>
+          <span>Integrated Engineering Solutions</span>
+          <span>Across</span>
+          <span>Process Industries and Beyond</span>
+        </h1>
+        <p>From <strong>greenfield builds</strong> to <strong>brownfield upgrades</strong>, we align engineering, project management, and manpower to de‑risk your investments.</p>
+        <p>We turn complex projects into <strong>predictable outcomes</strong> through disciplined execution and on-the-ground oversight.</p>
+      </div>
+    </section>
+
+    <section class="section brands">
+      <div class="section-inner">
+        <a id="brands" class="scroll-anchor" aria-hidden="true"></a>
+        <h2>Our Group Companies</h2>
+        <div class="brand-highlight">
+          <div class="brand-card">
+            <h3>Fidel Engineering Works</h3>
+            <p class="brand-intro">Engineering, fabrication and commissioning services for dairy, ethanol, sugar and pharma plants.</p>
+            <p>Complete industrial solutions in dairy, ethanol, sugar and pharmaceutical engineering.</p>
+          </div>
+          <div class="brand-card">
+            <h3>Fidel Projects and HR Services LLP</h3>
+            <p class="brand-intro">Project management, HR services and operational support for industrial businesses.</p>
+            <p>Business services and project support for industrial clients across process industries.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Fidel Engineering Works. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+/* General body settings */
+body {
+  background: #fff;
+  color: #231F20; /* dark blackish */
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* Fixed and bold logo styling */
+.fixed-logo-bold {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  height: 90px;
+  width: auto;
+  z-index: 1000;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(35,31,32,0.2); /* Soft drop shadow */
+  background: #fff;
+  padding: 6px;
+  border: 2.5px solid #FFC72C; /* yellow border */
+}
+
+/* Header styling */
+/* Override header styles */
+header {
+  background: #000000; /* Black background */
+  color: #ffffff;      /* White text */
+  padding: 2.5em 0 1.5em 0;
+  text-align: center;
+  border-bottom: 7px solid #FFC72C; /* Yellow border to complement logo */
+  position: relative;
+  z-index: 1;
+}
+
+.header-content h1 {
+  color: #ffffff;  /* White for header text */
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin: 0;
+}
+
+nav a {
+  color: #000000;  /* Change nav links background to white text black */
+  background: #FFC72C; /* yellow background */
+  padding: 0.6em 1.2em;
+  border-radius: 20px;
+  margin: 0 0.5em;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+  display: inline-block;
+}
+
+nav a:hover {
+  background: #fff; /* White background on hover */
+  color: #231F20; /* Dark text on hover */
+  border: 1.5px solid #231F20;
+}
+
+/* Container for main content, centered with left aligned text */
+.main-container, .centered-content {
+  max-width: 680px;
+  margin: 2em auto;
+  padding: 2.5em;
+  background: #fff;
+  color: #231F20;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(35,31,32,0.11);
+  text-align: left;
+}
+
+/* Unordered list styling */
+ul {
+  color: #393939;
+  font-size: 1.15em;
+  padding-left: 20px;
+}
+
+/* Footer styling */
+footer {
+  background: #231F20;
+  color: #FFC72C;
+  text-align: center;
+  padding: 1.4em 0;
+  margin-top: 32px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 720px) {
+  .main-container, .centered-content {
+    max-width: 95%;
+    padding: 1.5em;
+  }
+  .fixed-logo-bold {
+    height: 60px;
+    padding: 4px;
+  }
+  nav a {
+    padding: 0.5em 1em;
+    margin: 0 0.3em;
+    font-size: 0.9em;
+  }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fidel Projects — Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Fidel Projects for engineering, fabrication, project management and workforce support enquiries.">
+  <link rel="canonical" href="https://fidel-projects.com/contact.html">
+  <link rel="icon" type="image/png" href="assets/Logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="logo" href="index.html#home">
+        <img src="assets/Logo.png" alt="Fidel logo" class="logo-image">
+        <span class="logo-name">Fidel Projects</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="about.html#about">About</a></li>
+        <li><a href="services.html#services">Services</a></li>
+        <li><a href="projects.html#projects">Projects</a></li>
+        <li><a href="contact.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section contact">
+      <div class="section-inner">
+        <a id="contact" class="scroll-anchor" aria-hidden="true"></a>
+        <h2>Contact Us</h2>
+        <div class="contact-grid">
+          <div class="contact-addresses">
+            <article class="company">
+              <h3>Fidel Engineering Works</h3>
+              <address>
+                Registered Office: Delhi, New Delhi 411001<br>
+                Branch: Pune, Maharashtra 412037<br>
+                Email: <a href="mailto:fidelengineeringworks@gmail.com">fidelengineeringworks@gmail.com</a>
+              </address>
+            </article>
+
+            <article class="company">
+              <h3>Fidel Projects and HR Services LLP</h3>
+              <address>
+                Registered Office: Pune, Maharashtra 412037<br>
+                Branch: Delhi, New Delhi 411001<br>
+                Email: <a href="mailto:girish.kadam@fidel-projects.com">girish.kadam@fidel-projects.com</a>
+              </address>
+            </article>
+          </div>
+
+          <div class="contact-form-wrap">
+            <p>Ready to discuss your next plant project? Send a message below.</p>
+            <form id="contactForm" class="contact-form">
+              <fieldset class="recipient-choice">
+                <legend>Send to</legend>
+                <label class="recipient-card">
+                  <input type="checkbox" name="recipient" value="Fidel Engineering Works" data-email="fidelengineeringworks@gmail.com" checked>
+                  <strong>Fidel Engineering Works</strong>
+                </label>
+                <label class="recipient-card">
+                  <input type="checkbox" name="recipient" value="Fidel Projects and HR Services LLP" data-email="girish.kadam@fidel-projects.com" checked>
+                  <strong>Fidel Projects and HR Services LLP</strong>
+                </label>
+              </fieldset>
+
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required>
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your project" required></textarea>
+
+              <button type="submit">Send email</button>
+              <p id="contactMessage" class="contact-result" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Fidel Engineering Works. All rights reserved.</p>
+    <a class="footer-linkedin" href="https://www.linkedin.com/company/fidel-engineering-works/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

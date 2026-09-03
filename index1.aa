@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beginner Coding Starter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Welcome to Coding!</h1>
+    <p>This is a simple starter project you can open in any browser.</p>
+    <button id="magicButton">Click me</button>
+    <p id="message">Press the button to see JavaScript in action.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
