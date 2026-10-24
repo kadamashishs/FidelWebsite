@@ -1,33 +1,36 @@
-# FidelWebsite
+# Fidel Projects Website
 
-Static HTML, CSS, and JavaScript website for Fidel Projects. There is no build command and no server-side runtime.
+This repository is a static website built with HTML, CSS, and browser JavaScript. It has no build step, server-side runtime, or WordPress theme integration.
 
-## Test locally
+## WordPress compatibility
 
-Open `index.html` in a browser, or serve the folder locally if you want to test navigation through a local web server.
+The site can be served by a web host that also offers WordPress hosting, but it is not installable or editable as a WordPress theme. Uploading these files does not add them to the WordPress admin editor. To manage the pages through WordPress, the site must first be converted into a WordPress theme or rebuilt as WordPress pages.
 
-## Deploy with Netlify
+If WordPress is already installed on the target domain, confirm how the host chooses its document root and default index file before deploying. Do not overwrite an existing WordPress site unless replacing it is intentional and backed up.
 
-Netlify is the simplest first-time option for this static site.
+## Deploy as a static site
 
-1. Create an account at `https://www.netlify.com/`.
-2. Choose **Add new site** and **Deploy manually**.
-3. Drag the entire `firstproject` folder into the upload area.
-4. Confirm the deployed site works using the temporary Netlify URL.
-5. Open **Domain management**, choose **Add a domain**, and enter `fidel-projects.com`.
-6. Add the DNS records Netlify displays at the company where you purchased the domain.
-7. Add both the root domain and `www` version if Netlify offers that option.
-8. Set the preferred domain and wait for DNS propagation. Netlify will provision HTTPS automatically.
+Upload only the website files to the intended public document root or static hosting project:
 
-Keep `index.html` in the top level of the deployed folder. Do not upload only the `assets` folder.
+- `index.html`, `about.html`, `services.html`, `projects.html`, `contact.html`, and `404.html`
+- `style.css` and `script.js`
+- `assets/`
+- `robots.txt` and `sitemap.xml`
 
-## DNS guidance
+Do not upload `.git/`, `.github/`, SSH key files, backups, or local workspace files. In particular, keep `gitssh`, `SSHKey`, and all private credentials outside the public web root. The top-level `index.html` must remain at the root of the deployed site.
 
-Use the exact DNS values shown by Netlify because they can vary by account. Remove conflicting old website records before adding the new ones. DNS changes can take from a few minutes to 48 hours to become visible worldwide.
+For Netlify, use **Add new site → Deploy manually** and deploy a clean folder containing only the website files listed above. For cPanel or similar hosting, upload those same files into the domain's configured document root. Hosting controls vary; follow the provider's instructions for SSL, domain routing, and custom 404 pages.
+
+## Contact form behavior
+
+The current contact form uses a `mailto:` link to prepare an email in the visitor's email application. It does not submit to a server or store enquiries. For dependable web enquiries, connect it to a form provider or a backend endpoint before launch.
 
 ## Before launch
 
-- Test every navigation link and the Contact email workflow.
-- Confirm the logo and all images load on the deployed HTTPS URL.
-- Replace placeholder client/team images before publishing if required.
-- Submit `https://fidel-projects.com/sitemap.xml` to Google Search Console after the domain is live.
+- Confirm whether the target is static hosting or a WordPress-managed site.
+- Verify the domain document root and preferred canonical domain.
+- Test page navigation, assets, mobile layout, and the contact workflow on the deployed HTTPS URL.
+- Replace placeholder team and client content with organisation-approved material.
+- Confirm canonical URLs and `sitemap.xml` match the live domain.
+- Configure a real form endpoint if enquiries must be received without a local email application.
+- Submit the live sitemap to Google Search Console after launch.

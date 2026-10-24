@@ -5,8 +5,86 @@
    - retains simple active nav highlighting for multipage links
 */
 
+document.documentElement.classList.add('js');
 // Enable runtime debug logging by setting `window.DEBUG_SCROLL = true` in devtools.
 window.DEBUG_SCROLL = window.DEBUG_SCROLL || false;
+
+function initMobileMenu() {
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('primary-menu');
+  if (!toggle || !menu) return;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
+
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open navigation menu');
+    });
+  });
+}
+
+function initReveal() {
+  const items = document.querySelectorAll('.reveal');
+  if (!items.length || !('IntersectionObserver' in window)) {
+    items.forEach(item => item.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  items.forEach(item => observer.observe(item));
+}
+
+function initProjectCarousel() {
+  const carousel = document.querySelector('.project-carousel .project-cards');
+  const previous = document.querySelector('.project-carousel-prev');
+  const next = document.querySelector('.project-carousel-next');
+  if (!carousel || !previous || !next) return;
+
+  const cards = Array.from(carousel.querySelectorAll('.project-card'));
+  let currentIndex = 0;
+  let timerId = null;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function moveTo(index, behavior = 'smooth') {
+    currentIndex = (index + cards.length) % cards.length;
+    carousel.scrollTo({ left: cards[currentIndex].offsetLeft, behavior });
+  }
+
+  function stop() {
+    if (timerId) clearInterval(timerId);
+    timerId = null;
+  }
+
+  function start() {
+    if (reducedMotion || timerId) return;
+    timerId = setInterval(() => moveTo(currentIndex + 1), 4500);
+  }
+
+  previous.addEventListener('click', () => { stop(); moveTo(currentIndex - 1); start(); });
+  next.addEventListener('click', () => { stop(); moveTo(currentIndex + 1); start(); });
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+  carousel.addEventListener('focusin', stop);
+  carousel.addEventListener('focusout', start);
+  carousel.addEventListener('scroll', () => {
+    const nearest = cards.reduce((best, card, index) => Math.abs(card.offsetLeft - carousel.scrollLeft) < Math.abs(cards[best].offsetLeft - carousel.scrollLeft) ? index : best, 0);
+    currentIndex = nearest;
+  }, { passive: true });
+  start();
+}
 
 const contactForm = document.getElementById('contactForm');
 const contactMessage = document.getElementById('contactMessage');
@@ -27,6 +105,9 @@ if (contactForm) {
     const body = [
       `Name: ${formData.get('name')}`,
       `Email: ${formData.get('email')}`,
+      `Phone or WhatsApp: ${formData.get('phone') || 'Not provided'}`,
+      `Project type: ${formData.get('projectType') || 'Not specified'}`,
+      `Target timeline: ${formData.get('timeline') || 'Not specified'}`,
       '',
       formData.get('message')
     ].join('\n');
@@ -287,6 +368,9 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   interceptAnchorClicks();
   setActiveNavLinks();
+  initMobileMenu();
+  initReveal();
+  initProjectCarousel();
   initIndustryScroller();
   initDetailModal();
   // extra check to fix cases where browser scroll positions hide headings

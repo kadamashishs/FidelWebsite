@@ -6,3 +6,12 @@
 Thumbs.db
 
 # Add language-specific ignore rules here as needed
+
+# Local SSH credentials; never publish these files
+/gitssh
+/gitssh.pub
+/SSHKey
+/SSHKey.pub
+
+# Local backups are not deployment assets
+/backups/

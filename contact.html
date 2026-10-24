@@ -5,18 +5,20 @@
   <title>Fidel Projects — Contact</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contact Fidel Projects for engineering, fabrication, project management and workforce support enquiries.">
+  <meta property="og:type" content="website"><meta property="og:title" content="Contact Fidel Projects"><meta property="og:description" content="Discuss your next plant project with the Fidel Projects delivery team."><meta property="og:url" content="https://fidel-projects.com/contact.html"><meta property="og:image" content="https://fidel-projects.com/assets/industry-3.jpeg"><meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://fidel-projects.com/contact.html">
-  <link rel="icon" type="image/png" href="assets/Logo.png">
+  <link rel="icon" type="image/svg+xml" href="assets/Logo.svg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary navigation">
       <a class="logo" href="index.html#home">
-        <img src="assets/Logo.png" alt="Fidel logo" class="logo-image">
+        <img src="assets/Logo.svg" alt="Fidel Engineering Works logo" class="logo-image">
         <span class="logo-name">Fidel Projects</span>
       </a>
-      <ul class="nav-links">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="primary-menu">
         <li><a href="index.html#home">Home</a></li>
         <li><a href="about.html#about">About</a></li>
         <li><a href="services.html#services">Services</a></li>
@@ -72,6 +74,27 @@
 
               <label for="email">Email</label>
               <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+              <label for="phone">Phone or WhatsApp</label>
+              <input id="phone" name="phone" type="tel" placeholder="Your preferred contact number">
+
+              <label for="projectType">What do you need help with?</label>
+              <select id="projectType" name="projectType">
+                <option value="">Select an option</option>
+                <option>Fabrication and installation</option>
+                <option>Turnkey project delivery</option>
+                <option>Technical consulting</option>
+                <option>Site workforce support</option>
+              </select>
+
+              <label for="timeline">Target timeline</label>
+              <select id="timeline" name="timeline">
+                <option value="">Select an option</option>
+                <option>Planning stage</option>
+                <option>Within 1 month</option>
+                <option>Within 3 months</option>
+                <option>More than 3 months</option>
+              </select>
 
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="4" placeholder="Tell us about your project" required></textarea>
