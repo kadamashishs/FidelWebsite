@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root { --ink: #2b2a29; --muted: #666563; --paper: #fffaf0; --white: #fff; --signal: #ef7f1a; --signal-gold: #fcbf00; --line: #ded7c7; --header-offset: 112px; }
 * { box-sizing: border-box; }
@@ -11,7 +11,10 @@ img { max-width: 100%; }
 .site-nav { max-width: 1240px; min-height: 112px; margin: auto; padding: .75rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
 .logo { display: inline-flex; align-items: center; gap: .9rem; font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
 .logo-image { width: 100px; height: 100px; padding: 0; object-fit: fill; object-position: center; transform: none; border: 2px solid var(--signal-gold); border-radius: 0; background: var(--white); box-shadow: 0 0 0 4px rgba(252,191,0,.2), 0 7px 16px rgba(43,42,41,.16); }
-.logo-name { color: var(--ink); font-size: 1.16rem; letter-spacing: .01em; }
+.logo-name { display: flex; flex-direction: column; align-items: flex-start; gap: .12rem; color: var(--ink); font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight: 900; line-height: .86; text-transform: uppercase; }
+.logo-primary { font-size: 2.35rem; font-weight: 900; line-height: .82; }
+.logo-secondary { display: inline-flex; align-items: center; gap: .4rem; color: var(--signal); font-family: 'DM Sans', sans-serif; font-size: .68rem; font-weight: 800; letter-spacing: .12em; line-height: 1.35; }
+.logo-secondary::before { content: ''; display: inline-block; width: 22px; height: 4px; background: var(--signal-gold); }
 .nav-links { display: flex; align-items: center; gap: 1.6rem; list-style: none; margin: 0; padding: 0; font-size: .87rem; font-weight: 600; }
 .nav-links a { padding: .35rem 0; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s; }
 .nav-links a:hover, .nav-links a:focus, .nav-links a.active { color: var(--signal); border-color: var(--signal); }
